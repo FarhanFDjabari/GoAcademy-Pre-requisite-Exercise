@@ -6,6 +6,28 @@ public class Calculator {
     // displayed number on calculator
     static double displayNum = 0.0;
 
+    private static void add(int number) {
+        displayNum += number;
+    }
+
+    private static void subtract(int number) {
+        displayNum -= number;
+    }
+
+    private static void multiply(int number) {
+        displayNum *= number;
+    }
+
+    private static void divide(int number) {
+        if (number == 0) displayNum = 0.0;
+        else displayNum /= number;
+    }
+
+    private static void cancel() {
+        displayNum = 0.0;
+    }
+
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         boolean isExit = false;
@@ -55,27 +77,6 @@ public class Calculator {
             }
         }
         System.out.println();
-    }
-
-    private static void add(int number) {
-        displayNum += number;
-    }
-
-    private static void subtract(int number) {
-        displayNum -= number;
-    }
-
-    private static void multiply(int number) {
-        displayNum *= number;
-    }
-
-    private static void divide(int number) {
-        if (number == 0) displayNum = 0.0;
-        else displayNum /= number;
-    }
-
-    private static void cancel() {
-        displayNum = 0.0;
     }
 
 }
