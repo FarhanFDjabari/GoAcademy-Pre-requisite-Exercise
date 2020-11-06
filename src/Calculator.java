@@ -36,9 +36,7 @@ public class Calculator {
 
         /* program will continuously loop until exit command is inputted */
         while (!isExit) {
-            System.out.println("===============\n" +
-                    numberFormat.format(displayNum) +
-                    "\n===============");
+            System.out.println(numberFormat.format(displayNum));
             System.out.println("Enter a command (add, subtract, multiply, divide, cancel, exit): ");
             String rawCommand = input.nextLine();
 
@@ -48,6 +46,8 @@ public class Calculator {
             try {
                 commandNum = Integer.parseInt(commandWords[1]);
             } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
+                if (commandWords[0].equals("exit")) isExit = true;
+                else if (commandWords[0].equals("cancel")) cancel();
                 continue;
             } catch (NumberFormatException numberFormatException) {
                 System.err.println("Only support integer input");
@@ -66,12 +66,6 @@ public class Calculator {
                     break;
                 case "divide":
                     divide(commandNum);
-                    break;
-                case "cancel":
-                    cancel();
-                    break;
-                case "exit":
-                    isExit = true;
                     break;
                 default:
             }
