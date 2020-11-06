@@ -34,7 +34,7 @@ public class Calculator {
         int commandNum;
         DecimalFormat numberFormat = new DecimalFormat("#0.0");
 
-        // program will continuously loop until exit button is pressed
+        /* program will continuously loop until exit command is inputted */
         while (!isExit) {
             System.out.println("===============\n" +
                     numberFormat.format(displayNum) +
