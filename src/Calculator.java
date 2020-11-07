@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    // displayed number on calculator
     static double displayNum = 0.0;
 
     private static void add(int number) {
@@ -27,20 +26,17 @@ public class Calculator {
         displayNum = 0.0;
     }
 
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         boolean isExit = false;
         int commandNum;
         DecimalFormat numberFormat = new DecimalFormat("#0.0");
 
-        /* program will continuously loop until exit command is inputted */
         while (!isExit) {
             System.out.println(numberFormat.format(displayNum));
             System.out.println("Enter a command (add, subtract, multiply, divide, cancel, exit): ");
             String rawCommand = input.nextLine();
 
-            // split rawCommand value
             String[] commandWords = rawCommand.split(" ");
 
             try {
